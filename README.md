@@ -1,4 +1,4 @@
-# Kalkulator Perhitungan Biaya Perjalanan & Konsumsi BBM
+# Kalkulator Perhitungan Biaya Perjalanan
 Aplikasi web interaktif berbasis HTML, CSS, dan JavaScript untuk menghitung estimasi kebutuhan bahan bakar (BBM), total biaya bensin perjalanan harian, serta pembagian biaya (*split bill*) per orang.
 
 ## Tema Program
