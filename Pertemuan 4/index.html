@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Biaya Perjalanan & Bensin Harian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kalkulator Biaya Perjalanan</h1>
+            <p>menghitung konsumsi BBM dan estimasi biaya perjalanan harian.</p>
+        </header>
+
+        <main>
+            <form id="calculator-form">
+                <div class="input-group">
+                    <label for="distance">Jarak Tempuh PP / Sekali Jalan (km):</label>
+                    <input type="number" id="distance" placeholder="Contoh: 32" step="0.1" required min="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="fuelConsumption">Konsumsi BBM Kendaraan (km / liter):</label>
+                    <input type="number" id="fuelConsumption" placeholder="Contoh: 15 (1 Liter untuk 15 km)" step="0.1" required min="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="fuelType">Jenis BBM & Harga per Liter:</label>
+                    <select id="fuelType" required>
+                        <option value="" disabled selected>-- Pilih Jenis BBM --</option>
+                        <option value="10000">Pertalite (Rp 10.000 / Liter)</option>
+                        <option value="12500">Pertamax (Rp 12.500 / Liter)</option>
+                        <option value="13700">Pertamax Turbo (Rp 13.700 / Liter)</option>
+                        <option value="13200">Dexlite (Rp 13.200 / Liter)</option>
+                        <option value="custom">Input Harga Sendiri...</option>
+                    </select>
+                </div>
+
+                <div class="input-group hidden" id="customPriceGroup">
+                    <label for="customPrice">Harga BBM per Liter (Rp):</label>
+                    <input type="number" id="customPrice" placeholder="Contoh: 14000" min="1">
+                </div>
+
+                <div class="input-group">
+                    <label for="passengers">Jumlah Penumpang (Untuk Patungan):</label>
+                    <input type="number" id="passengers" value="1" min="1" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="btn-calculate">Hitung Biaya</button>
+                    <button type="button" id="btn-reset">Reset</button>
+                </div>
+            </form>
+
+            <div id="result-card" class="result-card hidden">
+                <h2>Hasil Perhitungan</h2>
+                <div class="result-item">
+                    <span>Kebutuhan BBM:</span>
+                    <strong id="res-fuel-needed">-</strong>
+                </div>
+                <div class="result-item">
+                    <span>Total Biaya Bensin:</span>
+                    <strong id="res-total-cost">-</strong>
+                </div>
+                <div class="result-item highlight">
+                    <span>Biaya per Orang:</span>
+                    <strong id="res-cost-per-person">-</strong>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Tugas Pemrograman Web - Pemecahan Masalah Sehari-Hari</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
